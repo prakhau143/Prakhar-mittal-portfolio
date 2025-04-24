@@ -13,6 +13,25 @@
 */
 
 // smooth scroll
+const mobileQuery = window.matchMedia('(max-width: 768px)');
+
+function handleMobileView(e) {
+  if (e.matches) {
+    // If screen is 768px or less
+    console.log('You are in mobile view');
+    // Add your mobile-specific JS logic here
+  } else {
+    console.log('You are in desktop view');
+    // Add your desktop-specific JS logic here
+  }
+}
+
+// Initial check
+handleMobileView(mobileQuery);
+
+// Listen for screen size changes
+mobileQuery.addEventListener('change', handleMobileView);
+
 $(document).ready(function(){
     $(".navbar .nav-link").on('click', function(event) {
 
